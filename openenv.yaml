@@ -1,0 +1,37 @@
+name: indian-traffic-env
+version: "1.0.0"
+description: >
+  AI agent controls traffic signals at an Indian urban junction (UVH-26 stats).
+  3 tasks from simple 2-phase control to adaptive multi-approach priority routing.
+author: sannidhayj20
+license: MIT
+tags:
+  - traffic
+  - urban
+  - india
+  - real-world
+  - signal-control
+
+tasks:
+  - id: single_junction_basic
+    description: Control a simple 2-phase NS/EW junction for 20 steps.
+    difficulty: easy
+    max_steps: 20
+
+  - id: priority_routing
+    description: >
+      4-arm junction with emergency vehicle priority. 
+      Agent must clear ambulances within 2 cycles or lose points.
+    difficulty: medium
+    max_steps: 30
+
+  - id: adaptive_congestion
+    description: >
+      Peak-hour surge with a random incident blocking one arm.
+      Agent must maintain throughput above 70% while managing overflow.
+    difficulty: hard
+    max_steps: 40
+
+server:
+  port: 7860
+  health_endpoint: /health
